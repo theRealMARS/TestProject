@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, Text, StyleSheet, Dimensions } from 'react-native';
-import { createMaterialTopTabNavigator, createStackNavigator, NavigationRouteConfigMap, TabNavigatorConfig } from 'react-navigation';
+import { createMaterialTopTabNavigator, createStackNavigator } from 'react-navigation';
 
 class TestScreen extends React.Component {
     static navigationOptions = {
@@ -10,7 +10,7 @@ class TestScreen extends React.Component {
     render() {
         return (
             <View style={styles.container}>
-                <Text>Testing!</Text>
+
             </View>
         );
     }
@@ -24,7 +24,7 @@ class TestTwoScreen extends React.Component {
     render() {
         return (
             <View style={styles.container}>
-                <Text>Just another test!</Text>
+                <Text></Text>
             </View>
         );
     }
@@ -39,17 +39,17 @@ const TestTwoStack = createStackNavigator({
 });
 
 TestStack.navigationOptions = {
-    tabBarLabel: 'Test',
+    tabBarLabel: 'Houses',
 }
 
 TestTwoStack.navigationOptions = {
-    tabBarLabel: 'Test Two'
+    tabBarLabel: 'Tenants'
 }
 
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: '#fff',
+        backgroundColor: '#3a3a3a',
         alignItems: 'center',
         justifyContent: 'center'
     },

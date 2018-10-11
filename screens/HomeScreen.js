@@ -2,7 +2,6 @@ import React from 'react';
 import { View, Text, StyleSheet, Image } from 'react-native';
 
 import HomeStackNavigator from '../navigation/HomeStackNavigator';
-import { grey } from 'ansi-colors';
 
 export default class HomeScreen extends React.Component {
     static navigationOptions = {
@@ -15,8 +14,8 @@ export default class HomeScreen extends React.Component {
         //     />
         // ),
         headerStyle: {
-            backgroundColor: '#2F95D6',
-            borderBottomColor: '#ffffff',
+            backgroundColor: '#141414',
+            //borderBottomColor: '#ffffff',
             borderBottomWidth: 0,
         },
         headerTitleStyle: {
@@ -26,7 +25,12 @@ export default class HomeScreen extends React.Component {
 
     render() {
         return (
-            <HomeStackNavigator/>
+            <View style={{flex: 1}}>
+                <HomeStackNavigator />
+                <View style={styles.inner}>
+                    <Text>+</Text>
+                </View>
+            </View>
         );
     }
 }
@@ -37,5 +41,17 @@ const styles = StyleSheet.create({
         backgroundColor: '#fff',
         alignItems: 'center',
         justifyContent: 'center',
+    },
+    inner: {
+        backgroundColor: 'yellow',
+        elevation: 20,
+        width: 56,
+        height: 56,
+        position: 'absolute',
+        bottom: 15,
+        right: 15,
+        borderRadius: 28,
+        justifyContent: 'center',
+        alignItems: 'center',
     },
 });
