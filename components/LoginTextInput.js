@@ -1,23 +1,31 @@
 import React from 'react';
-import { View, StyleSheet, Text, Dimensions } from 'react-native';
+import { View, StyleSheet, Text, TouchableHighlight, TouchableOpacity } from 'react-native';
+
+import Device from '../constants/layouts';
 
 export class LoginTextInput extends React.Component {
     constructor(props) {
         super(props);
-        this.state = { text: 'PlaceHolder', };
+        this.state = { text: 'PlaceHolder', isFocused: false };
+    }
+
+    onClick() {
+        alert("Testing");
     }
 
     render() {
         return (
             <View style={{ elevation: 5 }}>
-                <View style={styles.textInputHeader}>
-                    <Text style={styles.title}>Username</Text>
-                </View>
-                <View style={styles.textInput}>
-                    <Text
-                        style={[styles.textBasic, styles.textPlaceholder]}
-                    >{this.state.text}</Text>
-                </View>
+                <TouchableOpacity onPress={this.onClick}>
+                    <View style={styles.textInputHeader}>
+                        <Text style={styles.title}>[Name of House #1]</Text>
+                    </View>
+                    <View style={styles.textInput}>
+                        <Text
+                            style={[styles.textBasic, styles.textPlaceholder]}
+                        >{this.state.text}</Text>
+                    </View>
+                </TouchableOpacity>
             </View>
         );
     }
@@ -35,7 +43,7 @@ const styles = StyleSheet.create({
         elevation: 5,
     },
     textInput: {
-        width: Dimensions.get('window').width - 50,
+        width: Device.window.width - 50,
         height: 50,
         backgroundColor: 'rgba(250, 255, 12, 0.5)',
         justifyContent: 'center',

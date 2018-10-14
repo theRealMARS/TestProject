@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, StyleSheet, Image } from 'react-native';
+import { View, Text, StyleSheet, TouchableHighlight, TouchableNativeFeedback, TouchableOpacity } from 'react-native';
 
 import HomeStackNavigator from '../navigation/HomeStackNavigator';
 
@@ -22,13 +22,19 @@ export default class HomeScreen extends React.Component {
         }
     }
 
+    onClick() {
+        alert("test");
+    }
+
     render() {
         return (
-            <View style={{flex: 1}}>
+            <View style={{ flex: 1 }}>
                 <HomeStackNavigator />
-                <View style={styles.inner}>
-                    <Text>+</Text>
-                </View>
+                <TouchableOpacity onPress={this.onClick} style={styles.inner}>
+                    <View>
+                        <Text>+</Text>
+                    </View>
+                </TouchableOpacity>
             </View>
         );
     }
