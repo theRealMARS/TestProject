@@ -15,7 +15,6 @@ export default class HomeScreen extends React.Component {
         // ),
         headerStyle: {
             backgroundColor: '#141414',
-            //borderBottomColor: '#ffffff',
             borderBottomWidth: 0,
         },
         headerTitleStyle: {

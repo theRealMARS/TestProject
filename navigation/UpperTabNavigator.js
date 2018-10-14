@@ -2,6 +2,8 @@ import React from 'react';
 import { View, Text, StyleSheet, Dimensions } from 'react-native';
 import { createMaterialTopTabNavigator, createStackNavigator } from 'react-navigation';
 
+import { LoginTextInput } from '../components/LoginTextInput'
+
 class TestScreen extends React.Component {
     static navigationOptions = {
         header: null
@@ -10,7 +12,7 @@ class TestScreen extends React.Component {
     render() {
         return (
             <View style={styles.container}>
-
+                <LoginTextInput />
             </View>
         );
     }
@@ -24,7 +26,7 @@ class TestTwoScreen extends React.Component {
     render() {
         return (
             <View style={styles.container}>
-                <Text></Text>
+                <Text>{styles.container.backgroundColor}</Text>
             </View>
         );
     }

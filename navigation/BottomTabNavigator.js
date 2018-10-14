@@ -1,5 +1,5 @@
-import React from 'react';
 import { Platform } from 'react-native';
+import React from 'react';
 import { createStackNavigator, createBottomTabNavigator } from 'react-navigation';
 
 import HomeScreen from '../screens/HomeScreen';
